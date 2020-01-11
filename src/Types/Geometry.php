@@ -9,16 +9,6 @@ use Illuminate\Contracts\Support\Jsonable;
 
 abstract class Geometry implements GeometryInterface, Jsonable, \JsonSerializable
 {
-    protected static $wkb_types = [
-        1 => Point::class,
-        2 => LineString::class,
-        3 => Polygon::class,
-        4 => MultiPoint::class,
-        5 => MultiLineString::class,
-        6 => MultiPolygon::class,
-        7 => GeometryCollection::class,
-    ];
-
     public static function getWKTArgument($value)
     {
         $left = strpos($value, '(');
